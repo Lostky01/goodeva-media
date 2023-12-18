@@ -47,7 +47,7 @@
 
 @section('content')
     <section class="banner" style="padding:10%">
-        <h1 class="insightful" style="color:#FFF;font-family: Georgia;font-size: 117px;font-weight: 400; line-height:70%">stay
+        <h1 class="insightful" style="color:#FFF;font-family: Georgia;font-size: 117px;font-weight: 300; line-height:70%">stay
             insightful.</h1>
         <p style="color:#fff;font-family: 'Roboto', sans-serif;font-size: 23.625px;font-weight: 400;">Discover stories,
             thinking, and expertise from <br> writers on any topic.</p>
