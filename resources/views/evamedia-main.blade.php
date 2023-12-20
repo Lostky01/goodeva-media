@@ -62,6 +62,10 @@
                 height: auto;
             }
         }
+
+        .topics-text {
+            font-size: 14px !important;
+        }
     </style>
 
 @endsection
@@ -70,22 +74,26 @@
 @endsection
 
 @section('content')
+    {{-- Section banner desktop --}}
     <section class="banner desktop-show" style="padding:10%">
-        <h1 class="insightful" style="color:#FFF;font-family: Georgia;font-size: 117px;font-weight: 300; line-height:70%">stay
-            insightful.</h1>
+        <h1 class="insightful" style="color:#FFF;font-family: Georgia;font-size: 107px;font-weight: 300; line-height:70%">
+            <span id="typed-output">
+        </h1>
         <p style="color:#fff;font-family: 'Roboto', sans-serif;font-size: 23.625px;font-weight: 400;">Discover stories,
             thinking, and expertise from <br> writers on any topic.</p>
         <a href="" class="btn btn-primary mt-2"
-            style="color: #35A6B3; background-color: #FFFFFF; border-radius: 20px; width: 15%; border: none;font-size:15px">Baca
+            style="color: #35A6B3; background-color: #FFFFFF; border-radius: 20px; width: auto; border: none;font-size:15px">Baca
             Sekarang</a>
     </section>
 
+
+    {{-- Section banner mobile --}}
     <section class="banner mobile-show" style="padding-top:25%;padding-bottom:25%; padding-left:5%">
         <div class="container">
             <h1 class="insightful"
                 style="color:#FFF;font-family: Georgia;font-size: 60px;font-weight: 300; line-height:100%">
-                stay <br>
-                insightful.</h1>
+                <span id="typed-output-mobile"></span>
+            </h1>
             <p style="color:#fff;font-family: 'Roboto', sans-serif;font-size: 12px;font-weight: 400; line-height:100%">
                 Discover
                 stories,
@@ -97,74 +105,79 @@
     </section>
 
 
-
+    {{-- Section kedua desktop --}}
     <section class="kedua desktop-show">
-        <div class="col-12 mt-5" style="padding-left:15%">
+        <div class="col-12 mt-5" style="padding-left:10%">
             <div class="col-12">
                 <div class="container-fluid">
                     <div class="row justify-content-center button-set">
-                        <button id="exploreBtn" class="col-sm-1 mr-5 btn btn-primary"
-                            style="background-color: #f2f2f2; color: #000; border-radius: 20px; border: 0; background-image: url('{{ asset('goodeva-media/compass.png') }}'); background-size: 20px; background-position: 10px center; background-repeat: no-repeat;">
+                        <button id="exploreBtn" class="col-sm-1 mr-5 btn btn-primary topics-text"
+                            style="background-color: #f2f2f2; color: #000; border-radius: 20px; border: 0; background-image: url('{{ asset('goodeva-media/compass.png') }}'); background-size: 20px; background-position: 10px center; background-repeat: no-repeat;width:auto;">
                             Explore Topics
                         </button>
                         <div class="badges-container" style="display: flex; align-items: center;">
-                            <button class="mx-1 btn btn-primary filter-btn badge-topics"
+                            <button class="mx-1 btn btn-primary filter-btn badge-topics topics-text"
                                 data-filter="Technology">Technology</button>
-                            <button class="mx-1 btn btn-primary filter-btn badge-topics"
+                            <button class="mx-1 btn btn-primary filter-btn badge-topics topics-text"
                                 data-filter="Artificial Intelligence">Artificial Intelligence</button>
-                            <button class="mx-1 btn btn-primary filter-btn badge-topics"
+                            <button class="mx-1 btn btn-primary filter-btn badge-topics topics-text"
                                 data-filter="Programming">Programming</button>
-                            <button class="mx-1 btn btn-primary filter-btn badge-topics" data-filter="Tech">Tech</button>
-                            <button class="mx-1 btn btn-primary filter-btn badge-topics"
+                            <button class="mx-1 btn btn-primary filter-btn badge-topics topics-text"
+                                data-filter="Tech">Tech</button>
+                            <button class="mx-1 btn btn-primary filter-btn badge-topics topics-text"
                                 data-filter="Business">Business</button>
-                            <button class="mx-1 btn btn-primary filter-btn badge-topics" data-filter="Data Science">Data
+                            <button class="mx-1 btn btn-primary filter-btn badge-topics topics-text"
+                                data-filter="Data Science">Data
                                 Science</button>
-                            <button class="mx-1 btn btn-primary filter-btn badge-topics"
+                            <button class="mx-1 btn btn-primary filter-btn badge-topics topics-text"
                                 data-filter="Machine Learning">Machine Learning</button>
-                            <button class="mx-1 btn btn-primary filter-btn badge-topics"
+                            <button class="mx-1 btn btn-primary filter-btn badge-topics topics-text"
                                 data-filter="Blockchain">Blockchain</button>
                         </div>
                         <span style=" font-size: 25px;color:#242424;display:flex; align-items:center"><a class="ml-5"
                                 href="#" style="color:#000000" id="nextBtn"><i class="fa fa-angle-right"
                                     aria-hidden="true"></i></a></span>
                     </div>
+
                 </div>
             </div>
         </div>
     </section>
 
-
+    {{-- Section kedua mobile --}}
     <section class="kedua mobile-show">
         <div class="col-sm-12 mt-5">
             <div class="col-12">
-                <button id="exploreBtn" class="col-sm-6 mb-3 btn btn-primary"
+                <button id="exploreBtnMobile" class="col-sm-6 mb-3 btn btn-primary"
                     style="background-color: #f2f2f2; color: #000; border-radius: 20px; border: 0; background-image: url('{{ asset('goodeva-media/compass.png') }}'); background-size: 20px; background-position: 10px center; background-repeat: no-repeat;">
                     Explore Topics
                 </button> <br>
                 <div class="badges-container"></div>
-                <button class="mx-1 mb-2 btn btn-primary filter-btn badge-topics"
+                <button class="mx-1 mb-2 mt-1 btn btn-primary filter-btn badge-topics"
                     data-filter="Technology">Technology</button>
-                <button class="mx-1 mb-2 btn btn-primary filter-btn badge-topics"
+                <button class="mx-1 mb-2 mt-1 btn btn-primary filter-btn badge-topics"
                     data-filter="Artificial Intelligence">Artificial Intelligence</button>
                 <br>
-                <button class="mx-1 mb-2 btn btn-primary filter-btn badge-topics"
+                <button class="mx-1 mb-2 mt-1 btn btn-primary filter-btn badge-topics"
                     data-filter="Programming">Programming</button>
-                <button class="mx-1 mb-2 btn btn-primary filter-btn badge-topics" data-filter="Tech">Tech</button>
+                <button class="mx-1 mb-2 mt-1 btn btn-primary filter-btn badge-topics" data-filter="Tech">Tech</button>
                 <br>
-                <button class="mx-1 mb-2 btn btn-primary filter-btn badge-topics" data-filter="Business">Business</button>
-                <button class="mx-1 mb-2 btn btn-primary filter-btn badge-topics" data-filter="Data Science">Data
+                <button class="mx-1 mb-1 mt-1 btn btn-primary filter-btn badge-topics"
+                    data-filter="Business">Business</button>
+                <button class="mx-1 mb-1 mt-1 btn btn-primary filter-btn badge-topics" data-filter="Data Science">Data
                     Science</button>
                 <br>
-                <button class="mx-1 btn btn-primary filter-btn badge-topics" data-filter="Machine Learning">Machine
+                <button class="mx-1 mt-2 btn btn-primary filter-btn badge-topics" data-filter="Machine Learning">Machine
                     Learning</button>
-                <button class="mx-1 btn btn-primary filter-btn badge-topics" data-filter="Blockchain">Blockchain</button>
+                <button class="mx-1 mt-2 btn btn-primary filter-btn badge-topics"
+                    data-filter="Blockchain">Blockchain</button>
             </div>
         </div>
         </div>
     </section>
 
 
-
+    {{-- Section ketiga desktop --}}
     <section class="ketiga desktop-show" style="padding-left:10%;padding-top:5%;">
         <div class="col-sm-12 mb-4" style="display: flex; align-items: center;">
             <img src="{{ asset('goodeva-media/up.png') }}" alt="" style="margin-right: 10px;">
@@ -302,7 +315,7 @@
         </div>
     </section>
 
-
+    {{-- Section ketiga mobile --}}
     <section class="ketiga mobile-show" style="padding-top:5%;">
         <div class="col-sm-12 mb-4" style="display: flex; align-items: center;">
             <img src="{{ asset('goodeva-media/up.png') }}" alt="" style="margin-right: 10px;">
@@ -442,7 +455,7 @@
 
 
 
-
+    {{-- Section keempat desktop --}}
     <section class="lastone desktop-show">
         <div class="container-fluid" style="padding-left:15%;padding-top:5%;padding-bottom:5%">
             <div class="row">
@@ -712,7 +725,7 @@
 
 
 
-
+    {{-- Section keempaat mobile --}}
     <section class="lastone mobile-show">
         <div class="container-fluid" style="padding-left:5%;padding-top:10%;padding-bottom:5%">
             <div class="row">
@@ -732,7 +745,7 @@
                                 </h5>
                             </a>
                             <p style="color: #6B6B6B;font-size: 13px;font-family: Roboto;font-weight: 400;">An early
-                                experience in making my own rules came when I entered 
+                                experience in making my own rules came when I entered
                                 high school. In the first weeks of my freshman year, I tried to do…</p>
                             <span style="color: #6B6B6B;font-size: 12px;font-weight: 400;">Nov 21 . 4 min
                                 read</span><span class="ml-3"
@@ -742,7 +755,7 @@
                     </div>
                     <div class="row mt-5">
                         <div class="col-sm-12">
-                            <img src="{{ asset('goodeva-media/newscontent2.png') }}" alt="" >
+                            <img src="{{ asset('goodeva-media/newscontent2.png') }}" alt="">
                         </div>
                         <div class="col-sm-10">
                             <div class="mb-2" style="display: flex; align-items:center">
@@ -988,6 +1001,7 @@
     </section>
 @endsection
 @section('js_after')
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
     <style>
         .button-set {
             display: flex;
@@ -1028,7 +1042,7 @@
                 badgesContainer.removeChild(firstItem);
 
                 var newBadge = document.createElement('button');
-                newBadge.className = 'mx-1 btn btn-primary filter-btn badge-topics';
+                newBadge.className = 'mx-1 btn btn-primary filter-btn badge-topics topics-text';
                 newBadge.setAttribute('data-filter', 'New Topic');
                 var randomTopic = topics[Math.floor(Math.random() * topics.length)];
                 newBadge.innerText = randomTopic;
@@ -1050,6 +1064,12 @@
                     btn.classList.remove('btn-active');
                 });
             });
+            var exploreButtonMob = document.getElementById('exploreBtnMobile');
+            exploreButtonMob.addEventListener('click', function() {
+                filterButtons.forEach(function(btn) {
+                    btn.classList.remove('btn-active');
+                });
+            });
             var badgesContainer = document.querySelector('.badges-container');
             var nextBtn = document.getElementById('nextBtn');
 
@@ -1061,6 +1081,39 @@
                     event.target.classList.add('btn-active');
                 }
             });
+            var options = {
+                strings: [
+                    "discover stories.",
+                    "stay insightful.",
+                    "explore topics.",
+                    "ignite your potential.",
+                    "innovate with purpose.",
+                    "empower your team.",
+                    "collaborate for success.",
+                    "strive for excellence.",
+                    "build a resilient culture.",
+                    "inspire positive change.",
+                    "foster creativity.",
+                    "lead with passion.",
+                    "drive sustainable success.",
+                    "embody teamwork spirit.",
+                    "pioneer possibility.",
+                    "fuel your ambition.",
+                    "champion diversity.",
+                    "aspire to inspire.",
+                    "navigate with confidence.",
+                    "discover stories.",
+                ],
+                typeSpeed: 80,
+                backSpeed: 50,
+                backDelay: 1000,
+                startDelay: 500,
+                loop: true,
+                showCursor: true,
+            };
+
+            var typed = new Typed('#typed-output', options);
+            var typedmob = new Typed('#typed-output-mobile', options);
         });
     </script>
 @endsection
