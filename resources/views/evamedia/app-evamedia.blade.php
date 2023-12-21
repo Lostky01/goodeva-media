@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <?php
-$baseurl = 'https://www.goodeva.co.id/';
+$baseurl = 'https://dev.goodeva.co.id/';
 ?>
 
 <html lang="en">
@@ -278,8 +278,8 @@ $baseurl = 'https://www.goodeva.co.id/';
             }
 
             .header .navbar.navbar-default .navbar-collapse .right-nav-block .navbar-nav li {
-                float: none;
-                display: block;
+                float: right !important;
+                display: flex;
             }
 
             .header .navbar .right-nav-block.pull-right .navbar-nav>li>a {
@@ -764,6 +764,18 @@ $baseurl = 'https://www.goodeva.co.id/';
                 -moz-transform: rotate(-45deg) translate(-1px, 2px);
             }
         }
+
+        .bg-submenu.smart-safety {
+            background: url(https://dev.goodeva.co.id/public/asset-goodeva-lp/navbar/bg-menu-smart-safety.png);
+        }
+
+        .bg-submenu.sales-automation {
+            background: url(https://dev.goodeva.co.id/public/asset-goodeva-lp/navbar/bg-menu-sales-automation.png);
+        }
+
+        .bg-submenu.digital-growth {
+            background: url(https://dev.goodeva.co.id/public/asset-goodeva-lp/navbar/bg-menu-digital-growth.png);
+        }
     </style>
 
     @yield('css_after')
@@ -812,7 +824,8 @@ $baseurl = 'https://www.goodeva.co.id/';
                     <a href="{{ url('/evamedia') }}" class="logo-evamedia">
 
                         <img class="normal-logo " id="logo-utama" onerror="this.style.display='none'"
-                            data-swap="{{ $baseurl }}public/evamedia/goodeva-media.png" width="100" />
+                            data-swap="{{ $baseurl }}public/img/assets/Goodeva-technology-logo.png"
+                            width="100" />
 
                     </a>
 
@@ -821,55 +834,443 @@ $baseurl = 'https://www.goodeva.co.id/';
 
                     </a>
 
-                    <div class="navbar-collapse collapse floated" id="navbar-collapse">
+                    <div class="right-nav-block pull-right clearfix">
 
-                        <div class="right-nav-block pull-left clearfix menu-evamedia">
+                        <div class="navbar-collapse collapse floated" id="navbar-collapse">
 
-                            {{-- <div class="navbar-collapse collapse floated" > --}}
+                            <!-- list menu navbar -->
+                            <ul class="nav navbar-nav clearfix pad-mobile-y-3 navbar-with-inside vcenter">
 
-                            <ul
-                                class="nav navbar-nav clearfix pad-mobile-b-2 pad-mobile-t-2 navbar-with-inside vcenter">
-
-
-                                <li class="{{ Request::is('/') ? 'current' : '' }}">
-
-                                    <a href="{{ url('evamedia/') }}">Lifestyle</a>
-
-                                </li>
-                                <li class="{{ Request::is('/') ? 'current' : '' }}">
-
-                                    <a href="{{ url('evamedia/') }}">Current</a>
-
-                                </li>
-                                <li class="{{ Request::is('/') ? 'current' : '' }}">
-
-                                    <a href="{{ url('evamedia/') }}">Gadget</a>
-
-                                </li>
-                                <li class="{{ Request::is('/') ? 'current' : '' }}">
-
-                                    <a href="{{ url('evamedia/') }}">Sports</a>
-
+                                <!-- menu home -->
+                                <li class="current">
+                                    <a href="https://dev.goodeva.co.id">Home</a>
                                 </li>
 
+                                <!-- menu product dan submenunya untuk tampilan desktop -->
+                                <li class="e-nav--list_child mr-15px desktop-show ">
 
+                                    <a href="#">Product <i class="fa fa-chevron-down"></i></a>
 
-                            </ul>
+                                    <div class="wrap-inside-nav left">
 
+                                        <div class="inside-col">
 
+                                            <!-- list submenu product -->
+                                            <ul class="inside-nav e-nav--list_child is-withicon">
 
-                            {{-- </div> --}}
+                                                <!-- menu smart safety -->
+                                                <li class="bg-submenu smart-safety transition-content">
 
-                        </div>
+                                                    <a href="https://dev.goodeva.co.id/goodeva-smart-safety">
 
-                        <div class="right-nav-block pull-right clearfix">
+                                                        <div>
 
-                            {{-- <div class="navbar-collapse collapse floated"> --}}
+                                                            <span style="color:white !important;">Smart Safety</span>
 
-                            <ul
-                                class="nav navbar-nav clearfix pad-mobile-t-2 pad-mobile-b-3 navbar-with-inside vcenter">
+                                                            <span style="color:white !important;">Fatigue
+                                                                Solution</span>
 
+                                                        </div>
 
+                                                    </a>
+
+                                                </li>
+
+                                                <!-- menu sales automation -->
+                                                <li class="bg-submenu sales-automation transition-content">
+
+                                                    <a href="https://omsetku.id" target="_blank">
+
+                                                        <div>
+
+                                                            <span style="color:white !important;">Sales
+                                                                Automation</span>
+
+                                                            <span style="color:white !important;">CRM Solutions</span>
+
+                                                        </div>
+
+                                                    </a>
+
+                                                </li>
+
+                                                <!-- menu digital growth -->
+                                                <li class="bg-submenu digital-growth transition-content">
+
+                                                    <a href="https://digideva.id" target="_blank">
+
+                                                        <div>
+
+                                                            <span style="color:white !important;">Digital Growth</span>
+                                                            <span style="color:white !important;">Marketing
+                                                                Solutions</span>
+
+                                                        </div>
+
+                                                    </a>
+
+                                                </li>
+
+                                            </ul>
+
+                                        </div>
+
+                                    </div>
+
+                                </li>
+                                <!-- end menu product dan submenunya untuk tampilan desktop -->
+
+                                <!-- menu product dan submenunya untuk tampilan mobile -->
+                                <li class="dropdown e-nav--list_child wrap-inside-nav-mobile  mr-15px mobile-show">
+                                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Product
+                                        <i class="fa fa-chevron-down"></i>
+                                    </a>
+
+                                    <!-- list submenu product -->
+                                    <ul class="dropdown-menu inside-nav mx-3 px-3 e-nav--list_child_company">
+
+                                        <!-- menu smart safety -->
+                                        <li class="bg-submenu smart-safety transition-content">
+                                            <a href="https://dev.goodeva.co.id/goodeva-smart-safety">
+
+                                                <div>
+
+                                                    <span style="color:white !important;">Smart Safety</span>
+                                                    <span style="color:white !important;">Fatigue Solution</span>
+
+                                                </div>
+
+                                            </a>
+                                        </li>
+
+                                        <!-- menu sales automation -->
+                                        <li class="bg-submenu sales-automation transition-content">
+                                            <a href="https://omsetku.id" target="_blank">
+
+                                                <div>
+
+                                                    <span>Sales Automation</span>
+                                                    <span>CRM Solutions</span>
+
+                                                </div style="color:white">
+
+                                            </a>
+                                        </li>
+
+                                        <!-- menu digital growth -->
+                                        <li class="bg-submenu digital-growth transition-content" target="_blank">
+                                            <a href="https://digideva.id" target="_blank">
+
+                                                <div>
+
+                                                    <span style="color:white">Digital Growth</span>
+                                                    <span style="color:white">Marketing Solutions</span>
+
+                                                </div>
+
+                                            </a>
+                                        </li>
+                                    </ul>
+
+                                </li>
+                                <!-- end menu product dan submenunya untuk tampilan mobile -->
+
+                                <!-- menu solutions -->
+                                <li class=""><a href="https://dev.goodeva.co.id/solutions">Solutions</a></li>
+
+                                <!-- menu mengapa harus goodeva -->
+                                <li class="e-nav--list_child mr-15px desktop-show ">
+
+                                    <a href="#">Mengapa Goodeva <i class="fa fa-chevron-down"></i></a>
+
+                                    <div class="wrap-inside-nav right ">
+
+                                        <div class="inside-col">
+
+                                            <ul class="inside-nav e-nav--list_child_company is-withicon">
+
+                                                <li>
+
+                                                    <a href="https://dev.goodeva.co.id/purna-jual">
+
+                                                        <div>
+
+                                                            <span>Layanan Purna Jual</span>
+
+                                                            <span>Dukungan penuh untuk anda</span>
+
+                                                        </div>
+
+                                                    </a>
+
+                                                </li>
+
+                                                <li class="br-bottom-zero">
+
+                                                    <a href="https://dev.goodeva.co.id/client">
+
+                                                        <div>
+
+                                                            <span>Klien Kami</span>
+
+                                                            <span>Cerita sukses bersama Goodeva</span>
+
+                                                        </div>
+
+                                                    </a>
+
+                                                </li>
+
+                                            </ul>
+
+                                        </div>
+
+                                    </div>
+
+                                </li>
+
+                                <!-- menu academy -->
+                                <li class=""><a href="https://galaxy-code.goodeva.id/"
+                                        target="_blank">Academy</a></li>
+
+                                <!-- menu academy untuk tampilan desktop -->
+                                <li class="e-nav--list_child mr-15px desktop-show ">
+
+                                    <a href="#">Company <i class="fa fa-chevron-down"></i></a>
+
+                                    <div class="wrap-inside-nav right ">
+
+                                        <div class="inside-col">
+
+                                            <ul class="inside-nav e-nav--list_child_company is-withicon">
+
+                                                <li>
+
+                                                    <a href="https://dev.goodeva.co.id/about">
+
+                                                        <div>
+
+                                                            <span>About</span>
+
+                                                            <span>Learn more about us</span>
+
+                                                        </div>
+
+                                                    </a>
+
+                                                </li>
+
+                                                <li>
+
+                                                    <a href="https://dev.goodeva.co.id/careers">
+
+                                                        <div>
+
+                                                            <span>Careers</span>
+
+                                                            <span>Explore our openings</span>
+
+                                                        </div>
+
+                                                    </a>
+
+                                                </li>
+
+                                                <li>
+
+                                                    <a href="https://dev.goodeva.co.id/contact">
+
+                                                        <div>
+
+                                                            <span>Contact</span>
+
+                                                            <span>Keep in touch with us</span>
+
+                                                        </div>
+
+                                                    </a>
+
+                                                </li>
+
+                                                <li>
+
+                                                    <a href="https://dev.goodeva.co.id/affiliate">
+
+                                                        <div>
+
+                                                            <span>Affiliate</span>
+
+                                                            <span>Bergabung menjadi mitra kami</span>
+
+                                                        </div>
+
+                                                    </a>
+
+                                                </li>
+
+                                                <li>
+
+                                                    <a href="https://dev.goodeva.co.id/evamedia">
+
+                                                        <div>
+
+                                                            <span>Goodeva Media</span>
+
+                                                            <span>Get our latest update</span>
+
+                                                        </div>
+
+                                                    </a>
+
+                                                </li>
+
+                                            </ul>
+
+                                        </div>
+
+                                    </div>
+
+                                </li>
+
+                                <!-- menu academy untuk tampilan mobile -->
+                                <li class="dropdown e-nav--list_child wrap-inside-nav-mobile  mr-15px mobile-show ">
+
+                                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Company <i
+                                            class="fa fa-chevron-down"></i></a>
+
+                                    <ul
+                                        class="dropdown-menu inside-nav inside-nav mx-3 px-3 e-nav--list_child_company is-withicon">
+
+                                        <li>
+
+                                            <a href="https://dev.goodeva.co.id/about">
+
+                                                <div>
+
+                                                    <span>About</span>
+
+                                                    <span>Learn more about us</span>
+
+                                                </div>
+
+                                            </a>
+
+                                        </li>
+
+                                        <li>
+
+                                            <a href="https://dev.goodeva.co.id/careers">
+
+                                                <div>
+
+                                                    <span>Careers</span>
+
+                                                    <span>Explore our openings</span>
+
+                                                </div>
+
+                                            </a>
+
+                                        </li>
+
+                                        <li>
+
+                                            <a href="https://dev.goodeva.co.id/contact">
+
+                                                <div>
+
+                                                    <span>Contact</span>
+
+                                                    <span>Keep in touch with us</span>
+
+                                                </div>
+
+                                            </a>
+
+                                        </li>
+
+                                        <li>
+
+                                            <a href="https://dev.goodeva.co.id/evamedia">
+
+                                                <div>
+
+                                                    <span>Goodeva Media</span>
+
+                                                    <span>Get our latest update</span>
+
+                                                </div>
+
+                                            </a>
+
+                                        </li>
+
+                                    </ul>
+
+                                </li>
+
+                                <!-- pilih bahasa desktop -->
+                                <li class="e-nav--list_child mr-15px desktop-show ">
+
+                                    <a href="#" class="flex-lang">English
+                                        <!-- <i class="fa fa-globe"></i> -->
+                                        &nbsp;
+                                        <img src="https://dev.goodeva.co.id/public/asset-goodeva-lp/navbar/icon-language.png"
+                                            alt="" style="width: 14px;">
+                                    </a>
+
+                                    <!-- <div class="wrap-inside-nav right "> -->
+                                    <!--  -->
+                                    <!-- <div class="inside-col"> -->
+                                    <!--  -->
+                                    <!-- <ul class="inside-nav e-nav--list_child_company is-withicon"> -->
+                                    <!--  -->
+                                    <!-- <li> -->
+                                    <!--  -->
+                                    <!-- <a href="#"> -->
+                                    <!--  -->
+                                    <!-- <div> -->
+                                    <!--  -->
+                                    <!-- <span>Indonesia</span> -->
+                                    <!--  -->
+                                    <!-- </div> -->
+                                    <!--  -->
+                                    <!-- </a> -->
+                                    <!--  -->
+                                    <!-- </li> -->
+                                    <!--  -->
+                                    <!-- <li> -->
+                                    <!--  -->
+                                    <!-- <a href="#"> -->
+                                    <!--  -->
+                                    <!-- <div> -->
+                                    <!--  -->
+                                    <!-- <span>English</span> -->
+                                    <!--  -->
+                                    <!-- </div> -->
+                                    <!--  -->
+                                    <!-- </a> -->
+                                    <!--  -->
+                                    <!-- </li> -->
+                                    <!--  -->
+                                    <!--  -->
+                                    <!-- </ul> -->
+                                    <!--  -->
+                                    <!-- </div> -->
+                                    <!--  -->
+                                    <!-- </div> -->
+
+                                </li>
+
+                                <!-- pilih bahasa mobile -->
+                                <li class="dropdown e-nav--list_child wrap-inside-nav-mobile mobile-show ">
+
+                                    <a href="#" class="flex-lang">English
+                                        <img src="https://dev.goodeva.co.id/public/asset-goodeva-lp/navbar/icon-language.png"
+                                            alt="" style="width: 14px;">
+                                    </a>
+
+                                </li>
 
                                 <li>
                                     <a href="{{ url('contact') }}" style="text-decoration: none; margin: 0;">
@@ -894,9 +1295,8 @@ $baseurl = 'https://www.goodeva.co.id/';
                                     </a>
                                 </li>
 
-                            </ul>
 
-                            {{-- </div> --}}
+                            </ul>
 
                         </div>
 
@@ -1316,15 +1716,15 @@ $baseurl = 'https://www.goodeva.co.id/';
 
                     var _this = $('#logo-utama');
                     var current = _this.attr("src");
-                    var swap = "{{ $baseurl }}public/evamedia/goodeva-media.png";
-                    _this.attr('src', "{{ $baseurl }}public/evamedia/goodeva-media.png");
+                    var swap = "{{ $baseurl }}public/img/assets/Goodeva-technology-logo.png";
+                    _this.attr('src', "{{ $baseurl }}public/img/assets/Goodeva-technology-logo.png");
                 } else {
                     var isExpanded = $('#burger-i').attr("aria-expanded");
                     if (isExpanded == 'true') {
 
                         var _this = $('#logo-utama');
                         var current = _this.attr("src");
-                        var swap = "{{ $baseurl }}public/evamedia/goodeva-media.png"
+                        var swap = "{{ $baseurl }}public/img/assets/Goodeva-technology-logo.png"
                         @if (
                             !in_array(request()->segment(1), [
                                 'contact',
@@ -1348,8 +1748,9 @@ $baseurl = 'https://www.goodeva.co.id/';
 
                         var _this = $('#logo-utama');
                         var current = _this.attr("src");
-                        var swap = "{{ $baseurl }}public/evamedia/goodeva-media.png";
-                        _this.attr('src', "{{ $baseurl }}public/evamedia/goodeva-media.png");
+                        var swap = "{{ $baseurl }}public/img/assets/Goodeva-technology-logo.png";
+                        _this.attr('src',
+                            "{{ $baseurl }}public/img/assets/Goodeva-technology-logo.png");
 
                         @if (in_array(request()->segment(1), ['solutions']))
                             $('#logo-utama').hide();
@@ -1376,7 +1777,7 @@ $baseurl = 'https://www.goodeva.co.id/';
             if ($(window).width() < 767) {
                 @if (in_array(request()->segment(1), ['', 'solutions']))
                     $('#logo-utama').attr('src',
-                        "{{ $baseurl }}public/img/assets/solution/goodeva logo white.png");
+                        "{{ $baseurl }}public/img/assets/Goodeva-technology-logo.png");
                     $('.burger-icon').addClass('bg-menu-grey');
 
                     var iScrollHeight = $("body").prop("scrollHeight");
@@ -1389,8 +1790,9 @@ $baseurl = 'https://www.goodeva.co.id/';
 
                             var _this = $('#logo-utama');
                             var current = _this.attr("src");
-                            var swap = "{{ $baseurl }}public/evamedia/goodeva-media.png";
-                            _this.attr('src', "{{ $baseurl }}public/evamedia/goodeva-media.png");
+                            var swap = "{{ $baseurl }}public/img/assets/Goodeva-technology-logo.png";
+                            _this.attr('src',
+                                "{{ $baseurl }}public/img/assets/Goodeva-technology-logo.png");
                         } else {
                             var isExpanded = $('#burger-i').attr("aria-expanded");
                             if (isExpanded == 'true') {
@@ -1400,8 +1802,10 @@ $baseurl = 'https://www.goodeva.co.id/';
                                 $('.burger-icon').addClass('bg-menu-grey');
                                 var _this = $('#logo-utama');
                                 var current = _this.attr("src");
-                                var swap = "{{ $baseurl }}public/evamedia/goodeva-media.png"
-                                _this.attr('src', "{{ $baseurl }}public/evamedia/goodeva-media.png");
+                                var swap =
+                                    "{{ $baseurl }}public/img/assets/Goodeva-technology-logo.png"
+                                _this.attr('src',
+                                    "{{ $baseurl }}public/img/assets/Goodeva-technology-logo.png");
 
                                 @if (in_array(request()->segment(1), ['solutions']))
                                     $('#logo-utama').show();
@@ -1416,17 +1820,21 @@ $baseurl = 'https://www.goodeva.co.id/';
                 @else
                     $('.header .navbar').addClass('bg-menu-grey');
                     $('.burger-icon').removeClass('bg-menu-grey');
-                    $('#logo-utama').attr('src', "{{ $baseurl }}public/evamedia/goodeva-media.png");
+                    $('#logo-utama').attr('src',
+                        "{{ $baseurl }}public/img/assets/Goodeva-technology-logo.png");
                 @endif
             } else {
                 @if (in_array(request()->segment(1), ['']))
-                    $('#logo-utama').attr('src', "{{ $baseurl }}public/evamedia/goodeva-media.png");
+                    $('#logo-utama').attr('src',
+                        "{{ $baseurl }}public/img/assets/Goodeva-technology-logo.png");
                     $('.burger-icon').addClass('bg-menu-grey');
                 @elseif (in_array(request()->segment(1), ['solutions']))
-                    $('#logo-utama').attr('src', "{{ $baseurl }}public/evamedia/goodeva-media.png");
+                    $('#logo-utama').attr('src',
+                        "{{ $baseurl }}public/img/assets/Goodeva-technology-logo.png");
                     $('.burger-icon').addClass('bg-menu-grey');
                 @else
-                    $('#logo-utama').attr('src', "{{ $baseurl }}public/evamedia/goodeva-media.png");
+                    $('#logo-utama').attr('src',
+                        "{{ $baseurl }}public/img/assets/Goodeva-technology-logo.png");
                 @endif
             }
         });

@@ -18,3 +18,9 @@ use App\Http\Controllers\OmsetkuV2_Controller;
 Route::get('/', function () {
     return view('evamedia-main');
 });
+Route::get('/list', function () {
+    return view('goodeva-list');
+});
+Route::get('/login', function () {
+    return view('login');
+});
